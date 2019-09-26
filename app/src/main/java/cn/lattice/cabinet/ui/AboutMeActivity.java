@@ -16,6 +16,6 @@ public class AboutMeActivity extends BaseActivity {
 
     @Override
     protected void initComponents() {
-          addSingleTitleBar("关于我们");
+        addSingleTitleBar("关于我们");
     }
 }

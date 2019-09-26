@@ -18,14 +18,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.amap.api.maps.AMap;
-import com.amap.api.maps.CameraUpdateFactory;
-import com.amap.api.maps.MapView;
-import com.amap.api.maps.model.BitmapDescriptorFactory;
-import com.amap.api.maps.model.LatLng;
-import com.amap.api.maps.model.Marker;
-import com.amap.api.maps.model.MarkerOptions;
-import com.uuzuche.lib_zxing.activity.CaptureActivity;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import butterknife.BindView;
@@ -38,13 +30,13 @@ import cn.lattice.cabinet.login.LoginActivity;
 import cn.lattice.cabinet.ui.news.NearbyActivity;
 import cn.lattice.cabinet.ui.news.RechargeActivity;
 import cn.lattice.cabinet.ui.person.PersonalActivity;
+// AMap.OnMarkerClickListener
+public class MainActivity extends BaseActivity  {
 
-public class MainActivity extends BaseActivity implements AMap.OnMarkerClickListener {
-
-    @BindView(R.id.map_view)
+/*    @BindView(R.id.map_view)
     MapView mMapView;
     //初始化地图控制器对象
-    private AMap aMap;
+    private AMap aMap;*/
 
     @Override
     protected int getLayoutId() {
@@ -68,7 +60,7 @@ public class MainActivity extends BaseActivity implements AMap.OnMarkerClickList
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
-        mMapView.onCreate(savedInstanceState);
+  /*      mMapView.onCreate(savedInstanceState);
         if (aMap == null) {
             aMap = mMapView.getMap();
         }
@@ -87,7 +79,7 @@ public class MainActivity extends BaseActivity implements AMap.OnMarkerClickList
                 aMap.addMarker(marker);
             }
         });
-        aMap.setOnMarkerClickListener(this);
+        aMap.setOnMarkerClickListener(this);*/
         getPersimmion();
     }
 
@@ -106,7 +98,7 @@ public class MainActivity extends BaseActivity implements AMap.OnMarkerClickList
         }
     }
 
-    @Override
+  /*  @Override
     protected void onDestroy() {
         super.onDestroy();
         //在activity执行onDestroy时执行mMapView.onDestroy()，销毁地图
@@ -132,7 +124,7 @@ public class MainActivity extends BaseActivity implements AMap.OnMarkerClickList
         super.onSaveInstanceState(outState);
         //在activity执行onSaveInstanceState时执行mMapView.onSaveInstanceState (outState)，保存地图当前的状态
         mMapView.onSaveInstanceState(outState);
-    }
+    }*/
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -179,7 +171,7 @@ public class MainActivity extends BaseActivity implements AMap.OnMarkerClickList
         }
     }
 
-    private AMap.InfoWindowAdapter windowAdapter = new AMap.InfoWindowAdapter() {
+  /*  private AMap.InfoWindowAdapter windowAdapter = new AMap.InfoWindowAdapter() {
         @Override
         public View getInfoWindow(Marker marker) {
             if (infoWindow == null) {
@@ -200,9 +192,9 @@ public class MainActivity extends BaseActivity implements AMap.OnMarkerClickList
 
         View infoWindow = null;
 
-        /**
+        *//**
          * 自定义infowinfow窗口
-         */
+         *//*
         public void render(Marker marker, View view) {
 
             view.setOnClickListener(new View.OnClickListener() {
@@ -212,27 +204,27 @@ public class MainActivity extends BaseActivity implements AMap.OnMarkerClickList
                 }
             });
 
-        /*    ImageView imageView = (ImageView) view.findViewById(R.id.badge);
+        *//*    ImageView imageView = (ImageView) view.findViewById(R.id.badge);
             imageView.setImageResource(R.mipmap.car_wash_car);
 
             String title = marker.getTitle();
             TextView titleUi = ((TextView) view.findViewById(R.id.title));
             if (title != null) {
-               *//* SpannableString titleText = new SpannableString(title);
+               *//**//* SpannableString titleText = new SpannableString(title);
                 titleText.setSpan(new ForegroundColorSpan(UIUtils.getColor(R.color.font_level_3)), 0,
                         titleText.length(), 0);
                 titleUi.setTextSize(12);
-                titleUi.setText(titleText);*//*
+                titleUi.setText(titleText);*//**//*
 
             } else {
                 titleUi.setText("");
-            }*/
+            }*//*
         }
     };
 
     @Override
     public boolean onMarkerClick(Marker marker) {
         return false;
-    }
+    }*/
 }
 
