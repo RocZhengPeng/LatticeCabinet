@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="view_can_not_cache_tag" type="id"/>
+    <item name="tab_segment_item_id" type="id"/>
+
+    <!--TipsDialog-->
+    <item name="dialog_loading" type="id"/>
+    <item name="dialog_icon" type="id"/>
+    <item name="dialog_text" type="id"/>
+
+    <!--DeleteRecyclerView中BaseViewHolder-->
+    <item name="item_layout" type="id"/>
+    <item name="item_delete" type="id"/>
+
+
+    <item name="dk_title" type="id"/>
+
+
+    <item name="swipe_target" type="id" />
+    <item name="swipe_refresh_header" type="id" />
+    <item name="swipe_load_more_footer" type="id" />
+    <item name="swipe_toload_layout" type="id" />
+</resources>

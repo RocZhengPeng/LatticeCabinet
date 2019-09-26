@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00a4b1</color>
+    <color name="colorPrimaryDark">#00a4b1</color>
+    <color name="colorAccent">#00a4b1</color>
+
+    <color name="color_e5e5e5">#e5e5e5</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="colorF5">#F5F5F5</color>
+    <color name="colorEF">#EFEFEF</color>
+    <color name="colorFF">#FFFFFF</color>
+    <color name="colorDE">#DEDEDE</color>
+    <color name="colorCF">#CFCFCF</color>
+    <color name="colorC1">#C1C1C1</color>
+    <color name="color9B">#9B9B9B</color>
+    <color name="color4A">#4a4a4a</color>
+
+    <color name="color99">#999999</color>
+    <color name="color66">#666666</color>
+    <color name="color33">#333333</color>
+    <color name="color14">#141414</color>
+    <color name="color00">#000000</color>
+
+    <color name="line_one">#E5E5E5</color>
+
+    <color name="font_one">#141414</color>
+    <color name="font_tow">#333333</color>
+    <color name="font_three">#F79F24</color>
+    <color name="font_four">#666666</color>
+    <color name="font_gray">#666666</color>
+    <color name="font_gray_tow">#999999</color>
+    <color name="font_gray_three">#AEAEAE</color>
+    <color name="font_gray_four">#686868</color>
+    <color name="font_orange">#FF5444</color>
+    <color name="font_orange_tow">#FF6E69</color>
+    <color name="font_A0A0A0">#A0A0A0</color>
+    <color name="font_B8B4B4">#B8B4B4</color>
+    <color name="font_4A4A4A">#4A4A4A</color>
+    <color name="font_383A48">#383A48</color>
+    <color name="font_A2A2A2">#A2A2A2</color>
+    <color name="font_FF3B30">#FF3B30</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="btn_bg">#ffff6b5c</color>
+    <color name="btn_bg_tow">#f0f2f5</color>
+
+    <color name="font_313131">#313131</color>
+    <color name="font_646464">#646464</color>
+    <color name="font_A4A4A4">#A4A4A4</color>
+    <color name="font_989898">#989898</color>
+    <color name="bg_fff5f5f5">#fff5f5f5</color>
+    <color name="bg_fff8f8f8">#fff8f8f8</color>
+    <color name="bg_fff7f8fb">#fff7f8fb</color>
+    <color name="bg_f0f2f5">#f0f2f5</color>
+    <color name="bg_FFC058">#FFC058</color>
+    <color name="bg_FAD0D0">#FAD0D0</color>
+    <color name="bg_ff333333">#ff333333</color>
+    <color name="bg_E7EAED">#E7EAED</color>
+    <color name="bg_4C4C4C">#4C4C4C</color>
+    <color name="bg_C8C7CD">#C8C7CD</color>
+    <color name="bg_979797">#979797</color>
+    <color name="bg_E3E3E4">#E3E3E4</color>
+    <color name="bg_E9E9E9">#E9E9E9</color>
+    <color name="bg_ECECEC">#ECECEC</color>
+    <color name="bg_606060">#606060</color>
+    <color name="bg_FFB20D">#FFB20D</color>
+    <color name="bg_7B7B7F">#7B7B7F</color>
+    <color name="bg_4184F7">#4184F7</color>
+    <color name="bg_fff6f7f8">#fff6f7f8</color>
+</resources>
