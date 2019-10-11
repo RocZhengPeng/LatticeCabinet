@@ -332,11 +332,11 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback {
                 startActivity(new Intent(MainActivity.this, ServiceAdvisoryActivity.class));
                 break;
             case R.id.iv_location:
-                double lat = (double) SPUtils.get("lat", 0.0);
-                double lng = (double) SPUtils.get("lng", "");
-                if (lat != 0.0) {
+                String lat = (String) SPUtils.get("lat", "0.0");
+                String lng = (String) SPUtils.get("lng", "0.0");
+                if (!"0.0".equals(lat)) {
                     mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new
-                            LatLng(lat, lng), 16));
+                            LatLng(Double.valueOf(lat), Double.valueOf(lng)), 16));
                 }
 
                 break;

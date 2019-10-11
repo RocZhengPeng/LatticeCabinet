@@ -58,6 +58,7 @@ public class NearbyActivity extends BaseActivity {
         String lat = (String) SPUtils.get("lat", "0.0");
         String distance = DistanceUtil.getDistanceTow(Double.valueOf(lng), Double.valueOf(lat), Double.valueOf(dataBean.getAddressLat()), Double.valueOf(dataBean.getAddressLon()));
         tvDistance.setText(distance);
+        tvAddressDetail.setText(dataBean.getAddress());
     }
 
     @OnClick(R.id.btn_rent)
