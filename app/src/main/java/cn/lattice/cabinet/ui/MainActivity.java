@@ -46,12 +46,12 @@ import cn.lattice.cabinet.R;
 import cn.lattice.cabinet.base.BaseActivity;
 import cn.lattice.cabinet.entity.AllNetEntity;
 import cn.lattice.cabinet.entity.LoginEntity;
-import cn.lattice.cabinet.login.LoginActivity;
 import cn.lattice.cabinet.network.AbstractDialogSubscriber;
 import cn.lattice.cabinet.network.RetrofitClient;
 import cn.lattice.cabinet.ui.news.NewLoginActivity;
 import cn.lattice.cabinet.ui.news.RechargeActivity;
 import cn.lattice.cabinet.ui.person.PersonalActivity;
+import cn.lattice.cabinet.ui.person.ServiceAdvisoryActivity;
 import cn.lattice.cabinet.util.SPUtils;
 import cn.lattice.cabinet.util.ToastUtils;
 import io.reactivex.functions.Consumer;
@@ -216,16 +216,16 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback {
               /*  if (userInfo.getCash() == 0) {//没有交押金
                     startActivity(new Intent(MainActivity.this, RechargeActivity.class));
                 } else {//已经交了押金*/
-                    if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_SUCCESS) {
-                        String result = bundle.getString(CodeUtils.RESULT_STRING);
-                        Intent intent = new Intent(MainActivity.this, RentActivity.class);
-                        intent.putExtra("sn", result);//设备编号
-                        startActivity(intent);
-                    } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
-                        Toast.makeText(MainActivity.this, "解析二维码失败", Toast.LENGTH_LONG).show();
-                    }
+                if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_SUCCESS) {
+                    String result = bundle.getString(CodeUtils.RESULT_STRING);
+                    Intent intent = new Intent(MainActivity.this, RentActivity.class);
+                    intent.putExtra("sn", result);//设备编号
+                    startActivity(intent);
+                } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
+                    Toast.makeText(MainActivity.this, "解析二维码失败", Toast.LENGTH_LONG).show();
+                }
 
-              //  }
+                //  }
             }
         } else if (requestCode == 2) {
             Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
@@ -300,7 +300,7 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.iv_personal, R.id.iv_menu, R.id.ll_scan})
+    @OnClick({R.id.iv_personal, R.id.iv_menu, R.id.ll_scan, R.id.iv_service, R.id.iv_location})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_personal:
@@ -327,6 +327,18 @@ public class MainActivity extends BaseActivity implements OnMapReadyCallback {
                     Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
                     startActivityForResult(intent, 1);
                 }
+                break;
+            case R.id.iv_service:
+                startActivity(new Intent(MainActivity.this, ServiceAdvisoryActivity.class));
+                break;
+            case R.id.iv_location:
+                double lat = (double) SPUtils.get("lat", 0.0);
+                double lng = (double) SPUtils.get("lng", "");
+                if (lat != 0.0) {
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new
+                            LatLng(lat, lng), 16));
+                }
+
                 break;
         }
     }

@@ -28,7 +28,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".ui.person.UserHelpActivity"></activity>
+        <activity android:name=".ui.person.ServiceAdvisoryActivity"></activity>
+        <activity android:name=".ui.person.UserHelpActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -43,7 +44,7 @@
 
         <activity
             android:name=".ui.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
         <activity android:name=".ui.news.InputMoneyActivity" />
         <activity android:name=".ui.news.ProcessingActivity" />
         <activity android:name=".ui.RentActivity" />

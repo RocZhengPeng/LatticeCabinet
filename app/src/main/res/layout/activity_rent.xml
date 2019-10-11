@@ -15,6 +15,15 @@
         android:src="@mipmap/icon_type" />
 
     <TextView
+        android:id="@+id/tv_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:text="设备号："
+        android:layout_marginBottom="@dimen/dp_20"
+        android:textSize="@dimen/sp_14" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/dp_20"
@@ -27,7 +36,7 @@
         android:layout_marginLeft="@dimen/dp_20"
         android:layout_marginTop="@dimen/dp_6"
         android:layout_marginRight="@dimen/dp_20"
-        android:text="自借出后开始计时，前5分钟内免费；超出部分按每小时2元计费，不足1小时按1小时计算；每24小时30元封顶"
+        android:text="自借出后开始计时，前5分钟内免费；超出部分按每小时2.5元计费，不足1小时按1小时计算；每24小时50元封顶"
         android:textColor="@color/font_gray_tow"
         android:textSize="@dimen/sp_12" />
 

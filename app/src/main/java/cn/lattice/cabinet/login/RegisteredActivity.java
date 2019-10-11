@@ -89,6 +89,7 @@ public class RegisteredActivity extends BaseActivity {
                             int state = jsonObject.getInt("status");
                             if (state == 1) {//成功
                                 ToastUtils.showShort("注册成功");
+                                finish();
                             } else {//失败
                                 String message = jsonObject.getString("msg");
                                 ToastUtils.showShort(message);

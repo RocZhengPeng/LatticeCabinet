@@ -56,7 +56,11 @@ public class NearbyStoresActivity extends BaseActivity {
                 NearbyAdapter nearbyAdapter = new NearbyAdapter(R.layout.item_nearby_layout, entityList);
                 recyclerView.setAdapter(nearbyAdapter);
                 nearbyAdapter.setOnItemClickListener((baseQuickAdapter, view, i) -> {
-                    startActivity(new Intent(NearbyStoresActivity.this, NearbyActivity.class));
+                    Intent intent = new Intent(NearbyStoresActivity.this, NearbyActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("entity", entityList.get(i));
+                    intent.putExtras(bundle);
+                    startActivity(intent);
                 });
             }
         });

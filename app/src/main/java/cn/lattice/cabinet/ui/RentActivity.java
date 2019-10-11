@@ -2,11 +2,11 @@ package cn.lattice.cabinet.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.lattice.cabinet.R;
@@ -21,6 +21,9 @@ import okhttp3.ResponseBody;
 public class RentActivity extends BaseActivity {
 
 
+    @BindView(R.id.tv_id)
+    TextView tvId;
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_rent;
@@ -30,9 +33,10 @@ public class RentActivity extends BaseActivity {
     protected void initComponents() {
         addSingleTitleBar("租赁充电宝");
         String sn = getIntent().getStringExtra("sn");
+        tvId.setText("设备编号：" + sn);
         LoginEntity.DataBean userInfo = DKUserManager.getUserInfo();
         int userID = userInfo.getId();
-        RetrofitClient.getInstance(RocApplication.getContext()).deviceOpen(sn,userID, new AbstractDialogSubscriber<ResponseBody>(this) {
+        RetrofitClient.getInstance(RocApplication.getContext()).deviceOpen(sn, userID, new AbstractDialogSubscriber<ResponseBody>(this) {
             @Override
             public void onNext(ResponseBody responseBody) {
                 try {
@@ -47,5 +51,12 @@ public class RentActivity extends BaseActivity {
     @OnClick(R.id.btn_rent)
     public void onViewClicked() {
         startActivity(new Intent(RentActivity.this, ProcessingActivity.class));
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 }

@@ -25,7 +25,6 @@ import cn.lattice.cabinet.R;
 import cn.lattice.cabinet.base.BaseActivity;
 import cn.lattice.cabinet.common.sms.SmsCodeImpl;
 import cn.lattice.cabinet.entity.LoginEntity;
-import cn.lattice.cabinet.login.LoginActivity;
 import cn.lattice.cabinet.login.RegisteredActivity;
 import cn.lattice.cabinet.network.AbstractDialogSubscriber;
 import cn.lattice.cabinet.network.RetrofitClient;
@@ -61,7 +60,7 @@ public class NewLoginActivity extends BaseActivity {
             case R.id.btn_login:
                 String phone = etPhone.getText().toString();
                 String password = etPassword.getText().toString();
-                RetrofitClient.getInstance(RocApplication.getContext()).login(phone, password, new AbstractDialogSubscriber<ResponseBody>(this) {
+                RetrofitClient.getInstance(RocApplication.getContext()).login(tvPhoneCode.getText().toString() + phone, password, new AbstractDialogSubscriber<ResponseBody>(this) {
                     @Override
                     public void onNext(ResponseBody responseBody) {
                         try {

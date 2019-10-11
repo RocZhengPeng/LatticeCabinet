@@ -16,6 +16,8 @@ import cn.lattice.cabinet.ui.DKUserManager;
 import cn.lattice.cabinet.ui.FaultActivity;
 import cn.lattice.cabinet.ui.news.InputMoneyActivity;
 import cn.lattice.cabinet.ui.news.NewLoginActivity;
+import cn.lattice.cabinet.util.DKCallBackBoolean;
+import cn.lattice.cabinet.util.DialogUtil;
 
 public class PersonalActivity extends BaseActivity {
 
@@ -60,8 +62,15 @@ public class PersonalActivity extends BaseActivity {
                 startActivity(new Intent(PersonalActivity.this, AboutMeTowActivity.class));
                 break;
             case R.id.tv_sign_out:
-                DKUserManager.resetUserInfo();
-                startActivity(new Intent(PersonalActivity.this, NewLoginActivity.class));
+                DialogUtil.getInstance().showDialog(this, "是否确定退出登录？", new DKCallBackBoolean() {
+
+                    @Override
+                    public void action(int type) {
+                        DKUserManager.resetUserInfo();
+                        startActivity(new Intent(PersonalActivity.this, NewLoginActivity.class));
+                    }
+                }, true);
+
                 break;
             case R.id.ll_money:
                 startActivity(new Intent(PersonalActivity.this, InputMoneyActivity.class));

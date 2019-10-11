@@ -119,14 +119,16 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/iv_location"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginBottom="@dimen/dp_30"
-            android:src="@mipmap/ic_kefu" />
+            android:src="@mipmap/ic_location" />
 
         <ImageView
+            android:id="@+id/iv_service"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_alignParentRight="true"
@@ -135,14 +137,6 @@
             android:layout_marginBottom="@dimen/dp_30"
             android:src="@mipmap/ic_kefu" />
 
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="@dimen/dp_10"
-            android:layout_marginBottom="@dimen/dp_80"
-            android:src="@mipmap/ic_kefu" />
 
     </RelativeLayout>
 

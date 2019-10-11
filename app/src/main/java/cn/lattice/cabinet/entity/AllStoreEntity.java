@@ -1,5 +1,6 @@
 package cn.lattice.cabinet.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -41,7 +42,7 @@ public class AllStoreEntity {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable {
         /**
          * address : 广东省深圳市宝安区联昇百货(花园店)
          * addressLat : 113.849753
