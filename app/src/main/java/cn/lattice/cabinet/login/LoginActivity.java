@@ -64,7 +64,7 @@ public class LoginActivity extends BaseActivity {
                                 LoginEntity loginEntity = gson.fromJson(responseBody.toString(), LoginEntity.class);
 
                                 //保存登录信息
-                                DKUserManager.saveUserInfo(loginEntity);
+                                DKUserManager.saveUserInfo(loginEntity.getData());
 
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 finish();

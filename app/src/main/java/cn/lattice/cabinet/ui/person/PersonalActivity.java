@@ -3,17 +3,27 @@ package cn.lattice.cabinet.ui.person;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.lattice.cabinet.R;
 import cn.lattice.cabinet.base.BaseActivity;
+import cn.lattice.cabinet.entity.LoginEntity;
+import cn.lattice.cabinet.ui.DKUserManager;
 import cn.lattice.cabinet.ui.FaultActivity;
 import cn.lattice.cabinet.ui.news.InputMoneyActivity;
 import cn.lattice.cabinet.ui.news.NewLoginActivity;
 
 public class PersonalActivity extends BaseActivity {
 
+
+    @BindView(R.id.tv_user_head)
+    ImageView tvUserHead;
+    @BindView(R.id.tv_name)
+    TextView tvName;
 
     @Override
     protected int getLayoutId() {
@@ -24,6 +34,11 @@ public class PersonalActivity extends BaseActivity {
     protected void initComponents() {
         ButterKnife.bind(this);
         addSingleTitleBar("个人中心");
+
+        LoginEntity.DataBean userInfo = DKUserManager.getUserInfo();
+        if (userInfo != null) {
+            tvName.setText(userInfo.getPhoneNumber());
+        }
     }
 
     @OnClick({R.id.tv_my_order, R.id.tv_coupon, R.id.tv_fix, R.id.tv_help, R.id.tv_about, R.id.tv_sign_out, R.id.ll_money})
@@ -39,16 +54,25 @@ public class PersonalActivity extends BaseActivity {
                 startActivity(new Intent(PersonalActivity.this, FaultActivity.class));
                 break;
             case R.id.tv_help:
+                startActivity(new Intent(PersonalActivity.this, UserHelpActivity.class));
                 break;
             case R.id.tv_about:
                 startActivity(new Intent(PersonalActivity.this, AboutMeTowActivity.class));
                 break;
             case R.id.tv_sign_out:
+                DKUserManager.resetUserInfo();
                 startActivity(new Intent(PersonalActivity.this, NewLoginActivity.class));
                 break;
             case R.id.ll_money:
                 startActivity(new Intent(PersonalActivity.this, InputMoneyActivity.class));
                 break;
         }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 }

@@ -54,7 +54,7 @@ public class SmsCodeImpl implements SmsCode {
         RetrofitClient.getInstance(RocApplication.getContext()).sendCode(phone, new AbstractDialogSubscriber<CodeEntity>(baseView) {
             @Override
             public void onNext(CodeEntity entity) {
-                if (entity.getStatus() == 0) {//成功
+                if (entity.getStatus() == 1) {//成功
                     sendCodeSuccess(mBtCode);
                 } else {//失败
                     ToastUtils.showShort(entity.getMsg());

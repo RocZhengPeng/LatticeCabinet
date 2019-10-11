@@ -6,16 +6,14 @@ package cn.lattice.cabinet.entity;
 public class LoginEntity {
 
     /**
-     * status : 0
-     * msg : 登录成功
-     * data : {"id":1,"phoneNumber":"17673132955","passWord":"123456","wxOpenid":"ok1dK5AhBrBJQPsznql6iX4nMSZc","creatTime":1550924231000,"cash":"0","username":"郭佳明","headImg":"https://wx.qlogo.cn/mmhead/y64anJx5pMRZW1jicb2vypI5FN4DlfRjNJR4FngibveLk/132","status":0,"isDelete":null}
-     * trxCode : /app/Login
+     * status : 1
+     * msg : Success.
+     * data : {"id":2,"phoneNumber":"17673139387","passWord":"e10adc3949ba59abbe56e057f20f883e","creatTime":1569677806000,"cash":0,"balance":0,"status":0,"isDelete":0}
      */
 
     private int status;
     private String msg;
     private DataBean data;
-    private String trxCode;
 
     public int getStatus() {
         return status;
@@ -41,38 +39,26 @@ public class LoginEntity {
         this.data = data;
     }
 
-    public String getTrxCode() {
-        return trxCode;
-    }
-
-    public void setTrxCode(String trxCode) {
-        this.trxCode = trxCode;
-    }
-
     public static class DataBean {
         /**
-         * id : 1
-         * phoneNumber : 17673132955
-         * passWord : 123456
-         * wxOpenid : ok1dK5AhBrBJQPsznql6iX4nMSZc
-         * creatTime : 1550924231000
+         * id : 2
+         * phoneNumber : 17673139387
+         * passWord : e10adc3949ba59abbe56e057f20f883e
+         * creatTime : 1569677806000
          * cash : 0
-         * username : 郭佳明
-         * headImg : https://wx.qlogo.cn/mmhead/y64anJx5pMRZW1jicb2vypI5FN4DlfRjNJR4FngibveLk/132
+         * balance : 0.0
          * status : 0
-         * isDelete : null
+         * isDelete : 0
          */
 
         private int id;
         private String phoneNumber;
         private String passWord;
-        private String wxOpenid;
         private long creatTime;
-        private String cash;
-        private String username;
-        private String headImg;
+        private int cash;
+        private double balance;
         private int status;
-        private Object isDelete;
+        private int isDelete;
 
         public int getId() {
             return id;
@@ -98,14 +84,6 @@ public class LoginEntity {
             this.passWord = passWord;
         }
 
-        public String getWxOpenid() {
-            return wxOpenid;
-        }
-
-        public void setWxOpenid(String wxOpenid) {
-            this.wxOpenid = wxOpenid;
-        }
-
         public long getCreatTime() {
             return creatTime;
         }
@@ -114,28 +92,20 @@ public class LoginEntity {
             this.creatTime = creatTime;
         }
 
-        public String getCash() {
+        public int getCash() {
             return cash;
         }
 
-        public void setCash(String cash) {
+        public void setCash(int cash) {
             this.cash = cash;
         }
 
-        public String getUsername() {
-            return username;
+        public double getBalance() {
+            return balance;
         }
 
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getHeadImg() {
-            return headImg;
-        }
-
-        public void setHeadImg(String headImg) {
-            this.headImg = headImg;
+        public void setBalance(double balance) {
+            this.balance = balance;
         }
 
         public int getStatus() {
@@ -146,11 +116,11 @@ public class LoginEntity {
             this.status = status;
         }
 
-        public Object getIsDelete() {
+        public int getIsDelete() {
             return isDelete;
         }
 
-        public void setIsDelete(Object isDelete) {
+        public void setIsDelete(int isDelete) {
             this.isDelete = isDelete;
         }
     }

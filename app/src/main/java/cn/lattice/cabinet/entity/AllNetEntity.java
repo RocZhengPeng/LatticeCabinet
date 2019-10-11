@@ -6,17 +6,14 @@ import java.util.List;
  * Created by zhengpeng on 2019/7/7.
  */
 public class AllNetEntity {
-
     /**
-     * status : 0
+     * status : 1
      * msg : 查询成功
-     * data : [{"update_time":1562002792000,"address":"广东省深圳市宝安区前进二路宝田工业区128号天勤安盛大厦","create_time":1562002792000,"admin_id":28,"address_lat":"113.870873","id":548,"shop_name":"杨凯勇","address_lon":"22.602808","is_delete":0,"netCount":0}]
-     * trxCode : null
+     * data : [{"address":"广东省深圳市宝安区联昇百货(花园店)","addressLat":"113.849753","createTime":1568470434000,"name":"威望","adminId":28,"logo":"https://juxunkeji.oss-cn-beijing.aliyuncs.com/%E9%A3%8E%E6%89%87%281%29.png","addressLon":"22.59705","updateTime":1568470434000,"id":547,"m":"62.2"},{"address":"广东省深圳市宝安区凤塘大道535号华丰科技园(凤塘大道)","addressLat":"113.791961","createTime":1568470571000,"name":"佳佳","adminId":28,"logo":"https://juxunkeji.oss-cn-beijing.aliyuncs.com/%E9%A3%8E%E6%89%87%281%29.png","addressLon":"22.699551","updateTime":1568470571000,"id":548,"m":"766.1"}]
      */
 
     private int status;
     private String msg;
-    private Object trxCode;
     private List<DataBean> data;
 
     public int getStatus() {
@@ -35,14 +32,6 @@ public class AllNetEntity {
         this.msg = msg;
     }
 
-    public Object getTrxCode() {
-        return trxCode;
-    }
-
-    public void setTrxCode(Object trxCode) {
-        this.trxCode = trxCode;
-    }
-
     public List<DataBean> getData() {
         return data;
     }
@@ -53,36 +42,28 @@ public class AllNetEntity {
 
     public static class DataBean {
         /**
-         * update_time : 1562002792000
-         * address : 广东省深圳市宝安区前进二路宝田工业区128号天勤安盛大厦
-         * create_time : 1562002792000
-         * admin_id : 28
-         * address_lat : 113.870873
-         * id : 548
-         * shop_name : 杨凯勇
-         * address_lon : 22.602808
-         * is_delete : 0
-         * netCount : 0
+         * address : 广东省深圳市宝安区联昇百货(花园店)
+         * addressLat : 113.849753
+         * createTime : 1568470434000
+         * name : 威望
+         * adminId : 28
+         * logo : https://juxunkeji.oss-cn-beijing.aliyuncs.com/%E9%A3%8E%E6%89%87%281%29.png
+         * addressLon : 22.59705
+         * updateTime : 1568470434000
+         * id : 547
+         * m : 62.2
          */
 
-        private long update_time;
         private String address;
-        private long create_time;
-        private int admin_id;
-        private String address_lat;
+        private String addressLat;
+        private long createTime;
+        private String name;
+        private int adminId;
+        private String logo;
+        private String addressLon;
+        private long updateTime;
         private int id;
-        private String shop_name;
-        private String address_lon;
-        private int is_delete;
-        private int netCount;
-
-        public long getUpdate_time() {
-            return update_time;
-        }
-
-        public void setUpdate_time(long update_time) {
-            this.update_time = update_time;
-        }
+        private String m;
 
         public String getAddress() {
             return address;
@@ -92,28 +73,60 @@ public class AllNetEntity {
             this.address = address;
         }
 
-        public long getCreate_time() {
-            return create_time;
+        public String getAddressLat() {
+            return addressLat;
         }
 
-        public void setCreate_time(long create_time) {
-            this.create_time = create_time;
+        public void setAddressLat(String addressLat) {
+            this.addressLat = addressLat;
         }
 
-        public int getAdmin_id() {
-            return admin_id;
+        public long getCreateTime() {
+            return createTime;
         }
 
-        public void setAdmin_id(int admin_id) {
-            this.admin_id = admin_id;
+        public void setCreateTime(long createTime) {
+            this.createTime = createTime;
         }
 
-        public String getAddress_lat() {
-            return address_lat;
+        public String getName() {
+            return name;
         }
 
-        public void setAddress_lat(String address_lat) {
-            this.address_lat = address_lat;
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getAdminId() {
+            return adminId;
+        }
+
+        public void setAdminId(int adminId) {
+            this.adminId = adminId;
+        }
+
+        public String getLogo() {
+            return logo;
+        }
+
+        public void setLogo(String logo) {
+            this.logo = logo;
+        }
+
+        public String getAddressLon() {
+            return addressLon;
+        }
+
+        public void setAddressLon(String addressLon) {
+            this.addressLon = addressLon;
+        }
+
+        public long getUpdateTime() {
+            return updateTime;
+        }
+
+        public void setUpdateTime(long updateTime) {
+            this.updateTime = updateTime;
         }
 
         public int getId() {
@@ -124,36 +137,12 @@ public class AllNetEntity {
             this.id = id;
         }
 
-        public String getShop_name() {
-            return shop_name;
+        public String getM() {
+            return m;
         }
 
-        public void setShop_name(String shop_name) {
-            this.shop_name = shop_name;
-        }
-
-        public String getAddress_lon() {
-            return address_lon;
-        }
-
-        public void setAddress_lon(String address_lon) {
-            this.address_lon = address_lon;
-        }
-
-        public int getIs_delete() {
-            return is_delete;
-        }
-
-        public void setIs_delete(int is_delete) {
-            this.is_delete = is_delete;
-        }
-
-        public int getNetCount() {
-            return netCount;
-        }
-
-        public void setNetCount(int netCount) {
-            this.netCount = netCount;
+        public void setM(String m) {
+            this.m = m;
         }
     }
 }

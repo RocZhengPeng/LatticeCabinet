@@ -47,11 +47,14 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
         if (getLayoutId() != 0) {
             setContentView(getLayoutId());
 
+            ButterKnife.bind(this);
+
             //初始化组件
             initComponents();
 
             obtainData();
         }
+
         //ActivityManager.getInstance().pushOneActivity(this);
     }
 

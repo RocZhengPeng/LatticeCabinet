@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">iSteelbox</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_nearby">NearbyActivity</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="help_1">1.充电宝租借如何计费的？ 从借出充电宝开始计算租赁时间，归还充电宝后结束，没有归还就会继续产生租赁费用，充好电请及时归还，方便他人租用。不足1小时按1小时计算。</string>
+    <string name="help_2">2.怎样确认充电宝已归还成功？ 首先充电线收纳好，分清楚上下端，将充电宝插进盒子。然后进入我的订单完成租金支付，才算充电宝归还成功。</string>
+    <string name="help_3">3.充电宝归还进盒子后不能锁牢怎么办？ 首先可联系店员重启盒子，关闭电源5秒钟，再打开约20秒盒子联网完成，再将充电宝插入盒子，也可以尝试换个卡槽，换个盒子，换个商家归还充电宝，如仍无法锁牢，请立马联系客服。</string>
+    <string name="help_4">4.充电宝无法取出，订单仍在计费中？ 可联系店员重启设备，重启后设备仍无效，请立即联系客服。</string>
+    <string name="help_5">5.怎么退回押金？ 进入个人中心，点击我的钱包，点击退还押金。以下两种情景不可退押金：①有未归还的充电宝时；②归还充电宝后，未支付租金。</string>
+    <string name="help_6">6.押金到账时间多久？ 0-5个工作日，押金金额按照支付渠道按原路返回到付款账户。</string>
+    <string name="contact_address">联系地址</string>
+    <string name="address_detail">地址：广东省深圳市南山区深港花卉中心C10室</string>
+    <string name="phone">电话：0755-866788411</string>
+    <string name="contact_person">联系人：郑小姐</string>
+    <string name="phone_mob">电话：18588888888</string>
+    <string name="Business_contact">商务联系</string>
+    <string name="about_us">关于我们</string>
+</resources>

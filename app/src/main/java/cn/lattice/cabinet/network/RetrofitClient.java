@@ -5,9 +5,12 @@ import android.text.TextUtils;
 import android.util.Log;
 
 
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 
+import cn.lattice.cabinet.entity.AllNetEntity;
+import cn.lattice.cabinet.entity.AllStoreEntity;
 import cn.lattice.cabinet.entity.CodeEntity;
 import cn.lattice.cabinet.entity.ForgetEntity;
 import cn.lattice.cabinet.entity.LoginEntity;
@@ -15,6 +18,7 @@ import cn.lattice.cabinet.entity.RegisterEntity;
 import io.reactivex.Observer;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -22,6 +26,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Field;
+import retrofit2.http.Part;
 
 /**
  * @author create by wjh
@@ -96,8 +101,8 @@ public class RetrofitClient {
 
     }
 
-    public void register(String phoneNumber, String passWord, String username, String mailBox, String messagecode, Observer<ResponseBody> subscriber) {
-        apiService.register(phoneNumber, passWord, username, mailBox, messagecode)
+    public void register(String phoneNumber, String passWord, String vCode, Observer<ResponseBody> subscriber) {
+        apiService.register(phoneNumber, passWord, vCode)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -112,6 +117,56 @@ public class RetrofitClient {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber);
 
+    }
+
+    public void selectAllNet(String lat, String lng, Observer<AllNetEntity> subscriber) {
+        apiService.selectAllNet(lat, lng)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(subscriber);
+
+    }
+
+    public void queryAllStore(Observer<AllStoreEntity> subscriber) {
+        apiService.queryAllStore()
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(subscriber);
+
+    }
+
+    public void addFault(String userID,
+                         String deviceCode,
+                         int cause,
+                         String otherCause,
+                         String content,
+                         MultipartBody.Part MultipartFile,
+                         Observer<ResponseBody> subscriber) {
+        apiService.addFault(userID, deviceCode, cause, otherCause, content, MultipartFile)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(subscriber);
+
+
+    }
+
+    public void addFault(Map<String, Object> map, Observer<ResponseBody> subscriber) {
+        apiService.addFault(map)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(subscriber);
+    }
+
+    public void deviceOpen(String sn, int userId, Observer<ResponseBody> subscriber) {
+        apiService.deviceOpen(sn, userId)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(subscriber);
     }
 
 }

@@ -2,6 +2,7 @@ package cn.lattice.cabinet.ui;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.text.TextUtils;
 
 import cn.lattice.cabinet.entity.LoginEntity;
 import cn.lattice.cabinet.util.PreferenceUtil;
@@ -16,7 +17,7 @@ public class DKUserManager {
     private static SharedPreferences mSpUserInfo;
     private static SharedPreferences mSpToken;
     private static final String PreferenceUserInfo = "userinfo";
-    private static LoginEntity userInfo;
+    private static LoginEntity.DataBean userBean;
 
     static {
         mSpUserInfo = mContext.getSharedPreferences(PreferenceUserInfo, Context.MODE_PRIVATE);
@@ -27,15 +28,15 @@ public class DKUserManager {
      * 最初mUserInfo各属性内容为空，
      * 如登录后可更新当前的UserInfo和本地的缓存
      */
-    public static void saveUserInfo(LoginEntity loginEntity) {
-        if (userInfo != null) {
-            PreferenceUtil.updateBean(mSpUserInfo, getUserInfo(), userInfo);
+    public static void saveUserInfo(LoginEntity.DataBean userBean) {
+        if (userBean != null) {
+            PreferenceUtil.updateBean(mSpUserInfo, getUserInfo(), userBean);
         }
     }
 
     public static void updateUserInfo(LoginEntity loginEntity) {
-        if (userInfo != null) {
-            PreferenceUtil.updateBean(mSpUserInfo, getUserInfo(), userInfo);
+        if (loginEntity != null) {
+            PreferenceUtil.updateBean(mSpUserInfo, getUserInfo(), loginEntity);
         }
     }
 
@@ -45,9 +46,9 @@ public class DKUserManager {
      * mUserInfo是否等于null，防止UserManager.getUserInfo出现空指针
      */
     private static void readUserInfo() {
-        userInfo = (LoginEntity) PreferenceUtil.getBeanValue(mSpUserInfo, LoginEntity.class);
-        if (userInfo == null) {
-            userInfo = new LoginEntity();
+        userBean = (LoginEntity.DataBean) PreferenceUtil.getBeanValue(mSpUserInfo, LoginEntity.DataBean.class);
+        if (userBean == null) {
+            userBean = new LoginEntity.DataBean();
         }
     }
 
@@ -59,25 +60,25 @@ public class DKUserManager {
         SharedPreferences.Editor editor = mSpUserInfo.edit();
         editor.clear();
         editor.apply();
-        userInfo = new LoginEntity();
+        userBean = new LoginEntity.DataBean();
     }
 
     /**
      * 判断已经登录
      */
     public static boolean isLogined() {
-        LoginEntity.DataBean dataBean = getUserInfo().getData();
+        LoginEntity.DataBean dataBean = getUserInfo();
         if (dataBean != null) {
-            return (dataBean.getId()) != -1 ? true : false;
+            return !TextUtils.isEmpty(dataBean.getPhoneNumber()) ? true : false;
         }
         return false;
     }
 
 
-    public static LoginEntity getUserInfo() {
-        if (userInfo == null) {
+    public static LoginEntity.DataBean getUserInfo() {
+        if (userBean == null) {
             readUserInfo();
         }
-        return userInfo;
+        return userBean;
     }
 }

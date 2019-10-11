@@ -3,10 +3,6 @@ package cn.lattice.cabinet.network;
 import cn.lattice.cabinet.base.BaseView;
 import io.reactivex.disposables.Disposable;
 
-/**
- * @author Dankal Android Developer
- * @since 2018/7/18
- */
 
 public abstract class AbstractDialogSubscriber<T> extends AbstractSubscriber<T> {
 

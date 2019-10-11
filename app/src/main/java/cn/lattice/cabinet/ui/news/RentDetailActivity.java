@@ -13,6 +13,7 @@ import butterknife.ButterKnife;
 import cn.lattice.cabinet.R;
 import cn.lattice.cabinet.adapter.NearbyAdapter;
 import cn.lattice.cabinet.base.BaseActivity;
+import cn.lattice.cabinet.entity.AllStoreEntity;
 import cn.lattice.cabinet.entity.NearbyEntity;
 import cn.lattice.cabinet.ui.NearbyStoresActivity;
 
@@ -31,10 +32,10 @@ public class RentDetailActivity extends BaseActivity {
         addSingleTitleBar("租赁详情");
         ButterKnife.bind(this);
         rvList.setLayoutManager(new LinearLayoutManager(this));
-        List<NearbyEntity> entityList = new ArrayList<>();
-        entityList.add(new NearbyEntity());
-        entityList.add(new NearbyEntity());
-        entityList.add(new NearbyEntity());
+        List<AllStoreEntity.DataBean> entityList = new ArrayList<>();
+        entityList.add(new AllStoreEntity.DataBean());
+        entityList.add(new AllStoreEntity.DataBean());
+        entityList.add(new AllStoreEntity.DataBean());
         NearbyAdapter nearbyAdapter = new NearbyAdapter(R.layout.item_nearby_layout, entityList);
         rvList.setAdapter(nearbyAdapter);
         nearbyAdapter.setOnItemClickListener((baseQuickAdapter, view, i) -> {

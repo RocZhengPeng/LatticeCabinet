@@ -5,4 +5,29 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_nearby">NearbyActivity</string>
     <string name="title_activity_maps">Map</string>
+    <string name="help_1">1. How to charge for the rental of powerbank?
+The lease time is calculated from the beginning of borrowing the powerbank. When you return the powerbank the renting fee will be calculated and shown to you in the APP, if you didn’t return the powerbank to the box the lease fee will continue till you returned. If the power is fully charged, please return it in time for the convenience of other people's rent. Less than one hour is calculated as one hour.
+</string>
+    <string name="help_2">2. How to confirm that the powerbank has been returned successfully?
+Firstly, the charging cable is well Fitted, the upper and lower ends are clearly distinguished, and the powerbank is inserted into the box. Then enter My Order to complete the rent payment, the powerbank is returned successfully.
+</string>
+    <string name="help_3">3. What if the powerbank cant be locked when it is returned to the box?
+Firstly, you can contact the clerk to restart the box, turn off the power for 5 seconds, then Turn on the box for about 20 seconds to complete the Starting up. Then you can insert the powerbank into the box. You can also try to change the slot, box and merchant to return the powerbank. If you still can't lock it, please contact customer service immediately.
+</string>
+    <string name="help_4">4. If the powerbank cant be took out, the order is still in the billing process?
+You can contact the clerk to restart the Box. The Box is still out of service after restart. Please contact customer service immediately.
+</string>
+    <string name="help_5">5. How to return the deposit?
+Once you return the Powerbank to the Box immediately the Deposit will be returned. The following two scenarios are non-refundable deposits: (1) when there is an unreturned powerbank; and (2) when the powerbank is returned, the rent is not paid.
+</string>
+    <string name="help_6">5. How to return the deposit?
+Once you return the Powerbank to the Box immediately the Deposit will be returned. The following two scenarios are non-refundable deposits: (1) when there is an unreturned powerbank; and (2) when the powerbank is returned, the rent is not paid.
+</string>
+    <string name="contact_address">Contact address</string>
+    <string name="address_detail">Office 1209,B2B Tower,Al Abraj Str,Business Bay,Dubai,UAE</string>
+    <string name="phone">Tel:+971 4 554 9224</string>
+    <string name="contact_person">Kamal Kachko</string>
+    <string name="phone_mob">Mob:+971 55 948 0057</string>
+    <string name="Business_contact">Business contact</string>
+    <string name="about_us">About US</string>
 </resources>
